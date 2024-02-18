@@ -1,0 +1,146 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"deployedBytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"gasEstimates": null,
+		"methodIdentifiers": {
+			"checkAuthorizationStatus(address[],address,bytes32,bytes32,address,address)": "8a33be01",
+			"checkAuthorizationStatuses(address[],address,bytes32[],bytes32[],address[],address[])": "ca31d586"
+		}
+	},
+	"abi": [
+		{
+			"inputs": [
+				{
+					"internalType": "address[]",
+					"name": "authorizers",
+					"type": "address[]"
+				},
+				{
+					"internalType": "address",
+					"name": "airnode",
+					"type": "address"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "requestId",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "bytes32",
+					"name": "endpointId",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "address",
+					"name": "sponsor",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "requester",
+					"type": "address"
+				}
+			],
+			"name": "checkAuthorizationStatus",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "status",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address[]",
+					"name": "authorizers",
+					"type": "address[]"
+				},
+				{
+					"internalType": "address",
+					"name": "airnode",
+					"type": "address"
+				},
+				{
+					"internalType": "bytes32[]",
+					"name": "requestIds",
+					"type": "bytes32[]"
+				},
+				{
+					"internalType": "bytes32[]",
+					"name": "endpointIds",
+					"type": "bytes32[]"
+				},
+				{
+					"internalType": "address[]",
+					"name": "sponsors",
+					"type": "address[]"
+				},
+				{
+					"internalType": "address[]",
+					"name": "requesters",
+					"type": "address[]"
+				}
+			],
+			"name": "checkAuthorizationStatuses",
+			"outputs": [
+				{
+					"internalType": "bool[]",
+					"name": "statuses",
+					"type": "bool[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		}
+	]
+}

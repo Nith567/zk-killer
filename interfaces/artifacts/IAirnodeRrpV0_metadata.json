@@ -1,0 +1,880 @@
+{
+	"compiler": {
+		"version": "0.8.9+commit.e5eed63a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "templateId",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "airnode",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "endpointId",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "parameters",
+						"type": "bytes"
+					}
+				],
+				"name": "CreatedTemplate",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "airnode",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "requestId",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "errorMessage",
+						"type": "string"
+					}
+				],
+				"name": "FailedRequest",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "airnode",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "requestId",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "FulfilledRequest",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "airnode",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sponsor",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "withdrawalRequestId",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "sponsorWallet",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "FulfilledWithdrawal",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "airnode",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "requestId",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "requesterRequestCount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "chainId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "requester",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "endpointId",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "sponsor",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "sponsorWallet",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "fulfillAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes4",
+						"name": "fulfillFunctionId",
+						"type": "bytes4"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "parameters",
+						"type": "bytes"
+					}
+				],
+				"name": "MadeFullRequest",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "airnode",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "requestId",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "requesterRequestCount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "chainId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "requester",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "templateId",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "sponsor",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "sponsorWallet",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "fulfillAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes4",
+						"name": "fulfillFunctionId",
+						"type": "bytes4"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "parameters",
+						"type": "bytes"
+					}
+				],
+				"name": "MadeTemplateRequest",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "airnode",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sponsor",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "withdrawalRequestId",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "sponsorWallet",
+						"type": "address"
+					}
+				],
+				"name": "RequestedWithdrawal",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sponsor",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "requester",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "sponsorshipStatus",
+						"type": "bool"
+					}
+				],
+				"name": "SetSponsorshipStatus",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "authorizers",
+						"type": "address[]"
+					},
+					{
+						"internalType": "address",
+						"name": "airnode",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "requestId",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "endpointId",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "sponsor",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "requester",
+						"type": "address"
+					}
+				],
+				"name": "checkAuthorizationStatus",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "status",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "authorizers",
+						"type": "address[]"
+					},
+					{
+						"internalType": "address",
+						"name": "airnode",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32[]",
+						"name": "requestIds",
+						"type": "bytes32[]"
+					},
+					{
+						"internalType": "bytes32[]",
+						"name": "endpointIds",
+						"type": "bytes32[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "sponsors",
+						"type": "address[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "requesters",
+						"type": "address[]"
+					}
+				],
+				"name": "checkAuthorizationStatuses",
+				"outputs": [
+					{
+						"internalType": "bool[]",
+						"name": "statuses",
+						"type": "bool[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "airnode",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "endpointId",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes",
+						"name": "parameters",
+						"type": "bytes"
+					}
+				],
+				"name": "createTemplate",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "templateId",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "requestId",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "airnode",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "fulfillAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes4",
+						"name": "fulfillFunctionId",
+						"type": "bytes4"
+					},
+					{
+						"internalType": "string",
+						"name": "errorMessage",
+						"type": "string"
+					}
+				],
+				"name": "fail",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "requestId",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "airnode",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "fulfillAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes4",
+						"name": "fulfillFunctionId",
+						"type": "bytes4"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "signature",
+						"type": "bytes"
+					}
+				],
+				"name": "fulfill",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "callSuccess",
+						"type": "bool"
+					},
+					{
+						"internalType": "bytes",
+						"name": "callData",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "withdrawalRequestId",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "airnode",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "sponsor",
+						"type": "address"
+					}
+				],
+				"name": "fulfillWithdrawal",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32[]",
+						"name": "templateIds",
+						"type": "bytes32[]"
+					}
+				],
+				"name": "getTemplates",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "airnodes",
+						"type": "address[]"
+					},
+					{
+						"internalType": "bytes32[]",
+						"name": "endpointIds",
+						"type": "bytes32[]"
+					},
+					{
+						"internalType": "bytes[]",
+						"name": "parameters",
+						"type": "bytes[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "airnode",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "endpointId",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "sponsor",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "sponsorWallet",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "fulfillAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes4",
+						"name": "fulfillFunctionId",
+						"type": "bytes4"
+					},
+					{
+						"internalType": "bytes",
+						"name": "parameters",
+						"type": "bytes"
+					}
+				],
+				"name": "makeFullRequest",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "requestId",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "templateId",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "sponsor",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "sponsorWallet",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "fulfillAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes4",
+						"name": "fulfillFunctionId",
+						"type": "bytes4"
+					},
+					{
+						"internalType": "bytes",
+						"name": "parameters",
+						"type": "bytes"
+					}
+				],
+				"name": "makeTemplateRequest",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "requestId",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "requestId",
+						"type": "bytes32"
+					}
+				],
+				"name": "requestIsAwaitingFulfillment",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "isAwaitingFulfillment",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "airnode",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "sponsorWallet",
+						"type": "address"
+					}
+				],
+				"name": "requestWithdrawal",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "requester",
+						"type": "address"
+					}
+				],
+				"name": "requesterToRequestCountPlusOne",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "requestCountPlusOne",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "requester",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "sponsorshipStatus",
+						"type": "bool"
+					}
+				],
+				"name": "setSponsorshipStatus",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "sponsor",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "requester",
+						"type": "address"
+					}
+				],
+				"name": "sponsorToRequesterToSponsorshipStatus",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "sponsorshipStatus",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "sponsor",
+						"type": "address"
+					}
+				],
+				"name": "sponsorToWithdrawalRequestCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "withdrawalRequestCount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "templateId",
+						"type": "bytes32"
+					}
+				],
+				"name": "templates",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "airnode",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "endpointId",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes",
+						"name": "parameters",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			".deps/npm/@api3/airnode-protocol/contracts/rrp/interfaces/IAirnodeRrpV0.sol": "IAirnodeRrpV0"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		".deps/npm/@api3/airnode-protocol/contracts/rrp/interfaces/IAirnodeRrpV0.sol": {
+			"keccak256": "0x5306571db1377e8c9dd8cb6e6c7a8deaa2d8ec540e7b2b229e9db5aa5da21277",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3ff47c4fb89e55478d180e6a78049009ef57ba34688c1c454c12a7fd34c6df3a",
+				"dweb:/ipfs/QmQyKgg7mXgcyfnDiaTr5s7JDqFWQY6xbL6M5ajDiJGuwo"
+			]
+		},
+		".deps/npm/@api3/airnode-protocol/contracts/rrp/interfaces/IAuthorizationUtilsV0.sol": {
+			"keccak256": "0x597a40e9911628f6bc1d845c9ebe7c345833e8814caa5ce02a8597d3b4ee7975",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://61c3e2fcf29d5cbc12b86ba82109675d1291def1e26e25982ad12859fe3d3a76",
+				"dweb:/ipfs/QmPtfN5tmTgzGCXyxBQktuWAkxVWsg7Q7F8FB6YJveaDJq"
+			]
+		},
+		".deps/npm/@api3/airnode-protocol/contracts/rrp/interfaces/ITemplateUtilsV0.sol": {
+			"keccak256": "0x4212b264303a78b3c3ed0230cf23b7c3ca58bccec936eccd1d4924347b0fea47",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://eaf9f61c252264854cbdc409692f99d00327ad7ca9cd4bc17f3b0164e4bc8d76",
+				"dweb:/ipfs/QmYWvPeNGjND5kYPTMhU6RJRwgkHWqvYYoN24Lnbjndj8d"
+			]
+		},
+		".deps/npm/@api3/airnode-protocol/contracts/rrp/interfaces/IWithdrawalUtilsV0.sol": {
+			"keccak256": "0x732a3a2447150d8a8097042719ca1faf35e06cbfec364d1d6b17aae254cfd520",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4647ec4eb4c54e4d4a0af973e8804fdd5df0f6c5aa4d70bbeede40ea40bd672b",
+				"dweb:/ipfs/QmSgVM8e6tAvwtWd5Tx9rewsBTpJwFo4J3A2vvQDZZvC9B"
+			]
+		}
+	},
+	"version": 1
+}

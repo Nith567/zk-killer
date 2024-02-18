@@ -1,0 +1,164 @@
+{
+	"compiler": {
+		"version": "0.8.9+commit.e5eed63a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "templateId",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "airnode",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "endpointId",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "parameters",
+						"type": "bytes"
+					}
+				],
+				"name": "CreatedTemplate",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "airnode",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "endpointId",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes",
+						"name": "parameters",
+						"type": "bytes"
+					}
+				],
+				"name": "createTemplate",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "templateId",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32[]",
+						"name": "templateIds",
+						"type": "bytes32[]"
+					}
+				],
+				"name": "getTemplates",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "airnodes",
+						"type": "address[]"
+					},
+					{
+						"internalType": "bytes32[]",
+						"name": "endpointIds",
+						"type": "bytes32[]"
+					},
+					{
+						"internalType": "bytes[]",
+						"name": "parameters",
+						"type": "bytes[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "templateId",
+						"type": "bytes32"
+					}
+				],
+				"name": "templates",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "airnode",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "endpointId",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes",
+						"name": "parameters",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			".deps/npm/@api3/airnode-protocol/contracts/rrp/interfaces/ITemplateUtilsV0.sol": "ITemplateUtilsV0"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		".deps/npm/@api3/airnode-protocol/contracts/rrp/interfaces/ITemplateUtilsV0.sol": {
+			"keccak256": "0x4212b264303a78b3c3ed0230cf23b7c3ca58bccec936eccd1d4924347b0fea47",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://eaf9f61c252264854cbdc409692f99d00327ad7ca9cd4bc17f3b0164e4bc8d76",
+				"dweb:/ipfs/QmYWvPeNGjND5kYPTMhU6RJRwgkHWqvYYoN24Lnbjndj8d"
+			]
+		}
+	},
+	"version": 1
+}

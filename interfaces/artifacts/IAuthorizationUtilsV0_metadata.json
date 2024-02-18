@@ -1,0 +1,134 @@
+{
+	"compiler": {
+		"version": "0.8.9+commit.e5eed63a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "authorizers",
+						"type": "address[]"
+					},
+					{
+						"internalType": "address",
+						"name": "airnode",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "requestId",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "endpointId",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "sponsor",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "requester",
+						"type": "address"
+					}
+				],
+				"name": "checkAuthorizationStatus",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "status",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "authorizers",
+						"type": "address[]"
+					},
+					{
+						"internalType": "address",
+						"name": "airnode",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32[]",
+						"name": "requestIds",
+						"type": "bytes32[]"
+					},
+					{
+						"internalType": "bytes32[]",
+						"name": "endpointIds",
+						"type": "bytes32[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "sponsors",
+						"type": "address[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "requesters",
+						"type": "address[]"
+					}
+				],
+				"name": "checkAuthorizationStatuses",
+				"outputs": [
+					{
+						"internalType": "bool[]",
+						"name": "statuses",
+						"type": "bool[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			".deps/npm/@api3/airnode-protocol/contracts/rrp/interfaces/IAuthorizationUtilsV0.sol": "IAuthorizationUtilsV0"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		".deps/npm/@api3/airnode-protocol/contracts/rrp/interfaces/IAuthorizationUtilsV0.sol": {
+			"keccak256": "0x597a40e9911628f6bc1d845c9ebe7c345833e8814caa5ce02a8597d3b4ee7975",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://61c3e2fcf29d5cbc12b86ba82109675d1291def1e26e25982ad12859fe3d3a76",
+				"dweb:/ipfs/QmPtfN5tmTgzGCXyxBQktuWAkxVWsg7Q7F8FB6YJveaDJq"
+			]
+		}
+	},
+	"version": 1
+}

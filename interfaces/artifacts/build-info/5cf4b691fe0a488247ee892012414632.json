@@ -1,0 +1,839 @@
+{
+	"id": "5cf4b691fe0a488247ee892012414632",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.9",
+	"solcLongVersion": "0.8.9+commit.e5eed63a",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			".deps/npm/@api3/airnode-protocol/contracts/rrp/interfaces/ITemplateUtilsV0.sol": {
+				"content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ninterface ITemplateUtilsV0 {\n    event CreatedTemplate(\n        bytes32 indexed templateId,\n        address airnode,\n        bytes32 endpointId,\n        bytes parameters\n    );\n\n    function createTemplate(\n        address airnode,\n        bytes32 endpointId,\n        bytes calldata parameters\n    ) external returns (bytes32 templateId);\n\n    function getTemplates(bytes32[] calldata templateIds)\n        external\n        view\n        returns (\n            address[] memory airnodes,\n            bytes32[] memory endpointIds,\n            bytes[] memory parameters\n        );\n\n    function templates(bytes32 templateId)\n        external\n        view\n        returns (\n            address airnode,\n            bytes32 endpointId,\n            bytes memory parameters\n        );\n}\n"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			},
+			"remappings": []
+		}
+	},
+	"output": {
+		"contracts": {
+			".deps/npm/@api3/airnode-protocol/contracts/rrp/interfaces/ITemplateUtilsV0.sol": {
+				"ITemplateUtilsV0": {
+					"abi": [
+						{
+							"anonymous": false,
+							"inputs": [
+								{
+									"indexed": true,
+									"internalType": "bytes32",
+									"name": "templateId",
+									"type": "bytes32"
+								},
+								{
+									"indexed": false,
+									"internalType": "address",
+									"name": "airnode",
+									"type": "address"
+								},
+								{
+									"indexed": false,
+									"internalType": "bytes32",
+									"name": "endpointId",
+									"type": "bytes32"
+								},
+								{
+									"indexed": false,
+									"internalType": "bytes",
+									"name": "parameters",
+									"type": "bytes"
+								}
+							],
+							"name": "CreatedTemplate",
+							"type": "event"
+						},
+						{
+							"inputs": [
+								{
+									"internalType": "address",
+									"name": "airnode",
+									"type": "address"
+								},
+								{
+									"internalType": "bytes32",
+									"name": "endpointId",
+									"type": "bytes32"
+								},
+								{
+									"internalType": "bytes",
+									"name": "parameters",
+									"type": "bytes"
+								}
+							],
+							"name": "createTemplate",
+							"outputs": [
+								{
+									"internalType": "bytes32",
+									"name": "templateId",
+									"type": "bytes32"
+								}
+							],
+							"stateMutability": "nonpayable",
+							"type": "function"
+						},
+						{
+							"inputs": [
+								{
+									"internalType": "bytes32[]",
+									"name": "templateIds",
+									"type": "bytes32[]"
+								}
+							],
+							"name": "getTemplates",
+							"outputs": [
+								{
+									"internalType": "address[]",
+									"name": "airnodes",
+									"type": "address[]"
+								},
+								{
+									"internalType": "bytes32[]",
+									"name": "endpointIds",
+									"type": "bytes32[]"
+								},
+								{
+									"internalType": "bytes[]",
+									"name": "parameters",
+									"type": "bytes[]"
+								}
+							],
+							"stateMutability": "view",
+							"type": "function"
+						},
+						{
+							"inputs": [
+								{
+									"internalType": "bytes32",
+									"name": "templateId",
+									"type": "bytes32"
+								}
+							],
+							"name": "templates",
+							"outputs": [
+								{
+									"internalType": "address",
+									"name": "airnode",
+									"type": "address"
+								},
+								{
+									"internalType": "bytes32",
+									"name": "endpointId",
+									"type": "bytes32"
+								},
+								{
+									"internalType": "bytes",
+									"name": "parameters",
+									"type": "bytes"
+								}
+							],
+							"stateMutability": "view",
+							"type": "function"
+						}
+					],
+					"devdoc": {
+						"kind": "dev",
+						"methods": {},
+						"version": 1
+					},
+					"evm": {
+						"assembly": "",
+						"bytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"linkReferences": {},
+							"object": "",
+							"opcodes": "",
+							"sourceMap": ""
+						},
+						"deployedBytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"immutableReferences": {},
+							"linkReferences": {},
+							"object": "",
+							"opcodes": "",
+							"sourceMap": ""
+						},
+						"gasEstimates": null,
+						"legacyAssembly": null,
+						"methodIdentifiers": {
+							"createTemplate(address,bytes32,bytes)": "32393f2b",
+							"getTemplates(bytes32[])": "76428c9b",
+							"templates(bytes32)": "0a631576"
+						}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.8.9+commit.e5eed63a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"templateId\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"airnode\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"endpointId\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"parameters\",\"type\":\"bytes\"}],\"name\":\"CreatedTemplate\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"airnode\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"endpointId\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"parameters\",\"type\":\"bytes\"}],\"name\":\"createTemplate\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"templateId\",\"type\":\"bytes32\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"templateIds\",\"type\":\"bytes32[]\"}],\"name\":\"getTemplates\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"airnodes\",\"type\":\"address[]\"},{\"internalType\":\"bytes32[]\",\"name\":\"endpointIds\",\"type\":\"bytes32[]\"},{\"internalType\":\"bytes[]\",\"name\":\"parameters\",\"type\":\"bytes[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"templateId\",\"type\":\"bytes32\"}],\"name\":\"templates\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"airnode\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"endpointId\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"parameters\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\".deps/npm/@api3/airnode-protocol/contracts/rrp/interfaces/ITemplateUtilsV0.sol\":\"ITemplateUtilsV0\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\".deps/npm/@api3/airnode-protocol/contracts/rrp/interfaces/ITemplateUtilsV0.sol\":{\"keccak256\":\"0x4212b264303a78b3c3ed0230cf23b7c3ca58bccec936eccd1d4924347b0fea47\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://eaf9f61c252264854cbdc409692f99d00327ad7ca9cd4bc17f3b0164e4bc8d76\",\"dweb:/ipfs/QmYWvPeNGjND5kYPTMhU6RJRwgkHWqvYYoN24Lnbjndj8d\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [],
+						"types": null
+					},
+					"userdoc": {
+						"kind": "user",
+						"methods": {},
+						"version": 1
+					}
+				}
+			}
+		},
+		"sources": {
+			".deps/npm/@api3/airnode-protocol/contracts/rrp/interfaces/ITemplateUtilsV0.sol": {
+				"ast": {
+					"absolutePath": ".deps/npm/@api3/airnode-protocol/contracts/rrp/interfaces/ITemplateUtilsV0.sol",
+					"exportedSymbols": {
+						"ITemplateUtilsV0": [
+							49
+						]
+					},
+					"id": 50,
+					"license": "MIT",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								"^",
+								"0.8",
+								".0"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "32:23:0"
+						},
+						{
+							"abstract": false,
+							"baseContracts": [],
+							"canonicalName": "ITemplateUtilsV0",
+							"contractDependencies": [],
+							"contractKind": "interface",
+							"fullyImplemented": false,
+							"id": 49,
+							"linearizedBaseContracts": [
+								49
+							],
+							"name": "ITemplateUtilsV0",
+							"nameLocation": "67:16:0",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"anonymous": false,
+									"id": 11,
+									"name": "CreatedTemplate",
+									"nameLocation": "96:15:0",
+									"nodeType": "EventDefinition",
+									"parameters": {
+										"id": 10,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 3,
+												"indexed": true,
+												"mutability": "mutable",
+												"name": "templateId",
+												"nameLocation": "137:10:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 11,
+												"src": "121:26:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes32",
+													"typeString": "bytes32"
+												},
+												"typeName": {
+													"id": 2,
+													"name": "bytes32",
+													"nodeType": "ElementaryTypeName",
+													"src": "121:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bytes32",
+														"typeString": "bytes32"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 5,
+												"indexed": false,
+												"mutability": "mutable",
+												"name": "airnode",
+												"nameLocation": "165:7:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 11,
+												"src": "157:15:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 4,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "157:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 7,
+												"indexed": false,
+												"mutability": "mutable",
+												"name": "endpointId",
+												"nameLocation": "190:10:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 11,
+												"src": "182:18:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes32",
+													"typeString": "bytes32"
+												},
+												"typeName": {
+													"id": 6,
+													"name": "bytes32",
+													"nodeType": "ElementaryTypeName",
+													"src": "182:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bytes32",
+														"typeString": "bytes32"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 9,
+												"indexed": false,
+												"mutability": "mutable",
+												"name": "parameters",
+												"nameLocation": "216:10:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 11,
+												"src": "210:16:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes_memory_ptr",
+													"typeString": "bytes"
+												},
+												"typeName": {
+													"id": 8,
+													"name": "bytes",
+													"nodeType": "ElementaryTypeName",
+													"src": "210:5:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bytes_storage_ptr",
+														"typeString": "bytes"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "111:121:0"
+									},
+									"src": "90:143:0"
+								},
+								{
+									"functionSelector": "32393f2b",
+									"id": 22,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "createTemplate",
+									"nameLocation": "248:14:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 18,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 13,
+												"mutability": "mutable",
+												"name": "airnode",
+												"nameLocation": "280:7:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 22,
+												"src": "272:15:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 12,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "272:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 15,
+												"mutability": "mutable",
+												"name": "endpointId",
+												"nameLocation": "305:10:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 22,
+												"src": "297:18:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes32",
+													"typeString": "bytes32"
+												},
+												"typeName": {
+													"id": 14,
+													"name": "bytes32",
+													"nodeType": "ElementaryTypeName",
+													"src": "297:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bytes32",
+														"typeString": "bytes32"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 17,
+												"mutability": "mutable",
+												"name": "parameters",
+												"nameLocation": "340:10:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 22,
+												"src": "325:25:0",
+												"stateVariable": false,
+												"storageLocation": "calldata",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes_calldata_ptr",
+													"typeString": "bytes"
+												},
+												"typeName": {
+													"id": 16,
+													"name": "bytes",
+													"nodeType": "ElementaryTypeName",
+													"src": "325:5:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bytes_storage_ptr",
+														"typeString": "bytes"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "262:94:0"
+									},
+									"returnParameters": {
+										"id": 21,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 20,
+												"mutability": "mutable",
+												"name": "templateId",
+												"nameLocation": "383:10:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 22,
+												"src": "375:18:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes32",
+													"typeString": "bytes32"
+												},
+												"typeName": {
+													"id": 19,
+													"name": "bytes32",
+													"nodeType": "ElementaryTypeName",
+													"src": "375:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bytes32",
+														"typeString": "bytes32"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "374:20:0"
+									},
+									"scope": 49,
+									"src": "239:156:0",
+									"stateMutability": "nonpayable",
+									"virtual": false,
+									"visibility": "external"
+								},
+								{
+									"functionSelector": "76428c9b",
+									"id": 37,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "getTemplates",
+									"nameLocation": "410:12:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 26,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 25,
+												"mutability": "mutable",
+												"name": "templateIds",
+												"nameLocation": "442:11:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 37,
+												"src": "423:30:0",
+												"stateVariable": false,
+												"storageLocation": "calldata",
+												"typeDescriptions": {
+													"typeIdentifier": "t_array$_t_bytes32_$dyn_calldata_ptr",
+													"typeString": "bytes32[]"
+												},
+												"typeName": {
+													"baseType": {
+														"id": 23,
+														"name": "bytes32",
+														"nodeType": "ElementaryTypeName",
+														"src": "423:7:0",
+														"typeDescriptions": {
+															"typeIdentifier": "t_bytes32",
+															"typeString": "bytes32"
+														}
+													},
+													"id": 24,
+													"nodeType": "ArrayTypeName",
+													"src": "423:9:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
+														"typeString": "bytes32[]"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "422:32:0"
+									},
+									"returnParameters": {
+										"id": 36,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 29,
+												"mutability": "mutable",
+												"name": "airnodes",
+												"nameLocation": "532:8:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 37,
+												"src": "515:25:0",
+												"stateVariable": false,
+												"storageLocation": "memory",
+												"typeDescriptions": {
+													"typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+													"typeString": "address[]"
+												},
+												"typeName": {
+													"baseType": {
+														"id": 27,
+														"name": "address",
+														"nodeType": "ElementaryTypeName",
+														"src": "515:7:0",
+														"stateMutability": "nonpayable",
+														"typeDescriptions": {
+															"typeIdentifier": "t_address",
+															"typeString": "address"
+														}
+													},
+													"id": 28,
+													"nodeType": "ArrayTypeName",
+													"src": "515:9:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+														"typeString": "address[]"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 32,
+												"mutability": "mutable",
+												"name": "endpointIds",
+												"nameLocation": "571:11:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 37,
+												"src": "554:28:0",
+												"stateVariable": false,
+												"storageLocation": "memory",
+												"typeDescriptions": {
+													"typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
+													"typeString": "bytes32[]"
+												},
+												"typeName": {
+													"baseType": {
+														"id": 30,
+														"name": "bytes32",
+														"nodeType": "ElementaryTypeName",
+														"src": "554:7:0",
+														"typeDescriptions": {
+															"typeIdentifier": "t_bytes32",
+															"typeString": "bytes32"
+														}
+													},
+													"id": 31,
+													"nodeType": "ArrayTypeName",
+													"src": "554:9:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
+														"typeString": "bytes32[]"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 35,
+												"mutability": "mutable",
+												"name": "parameters",
+												"nameLocation": "611:10:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 37,
+												"src": "596:25:0",
+												"stateVariable": false,
+												"storageLocation": "memory",
+												"typeDescriptions": {
+													"typeIdentifier": "t_array$_t_bytes_memory_ptr_$dyn_memory_ptr",
+													"typeString": "bytes[]"
+												},
+												"typeName": {
+													"baseType": {
+														"id": 33,
+														"name": "bytes",
+														"nodeType": "ElementaryTypeName",
+														"src": "596:5:0",
+														"typeDescriptions": {
+															"typeIdentifier": "t_bytes_storage_ptr",
+															"typeString": "bytes"
+														}
+													},
+													"id": 34,
+													"nodeType": "ArrayTypeName",
+													"src": "596:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_array$_t_bytes_storage_$dyn_storage_ptr",
+														"typeString": "bytes[]"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "501:130:0"
+									},
+									"scope": 49,
+									"src": "401:231:0",
+									"stateMutability": "view",
+									"virtual": false,
+									"visibility": "external"
+								},
+								{
+									"functionSelector": "0a631576",
+									"id": 48,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "templates",
+									"nameLocation": "647:9:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 40,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 39,
+												"mutability": "mutable",
+												"name": "templateId",
+												"nameLocation": "665:10:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 48,
+												"src": "657:18:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes32",
+													"typeString": "bytes32"
+												},
+												"typeName": {
+													"id": 38,
+													"name": "bytes32",
+													"nodeType": "ElementaryTypeName",
+													"src": "657:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bytes32",
+														"typeString": "bytes32"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "656:20:0"
+									},
+									"returnParameters": {
+										"id": 47,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 42,
+												"mutability": "mutable",
+												"name": "airnode",
+												"nameLocation": "745:7:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 48,
+												"src": "737:15:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 41,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "737:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 44,
+												"mutability": "mutable",
+												"name": "endpointId",
+												"nameLocation": "774:10:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 48,
+												"src": "766:18:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes32",
+													"typeString": "bytes32"
+												},
+												"typeName": {
+													"id": 43,
+													"name": "bytes32",
+													"nodeType": "ElementaryTypeName",
+													"src": "766:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bytes32",
+														"typeString": "bytes32"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 46,
+												"mutability": "mutable",
+												"name": "parameters",
+												"nameLocation": "811:10:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 48,
+												"src": "798:23:0",
+												"stateVariable": false,
+												"storageLocation": "memory",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes_memory_ptr",
+													"typeString": "bytes"
+												},
+												"typeName": {
+													"id": 45,
+													"name": "bytes",
+													"nodeType": "ElementaryTypeName",
+													"src": "798:5:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bytes_storage_ptr",
+														"typeString": "bytes"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "723:108:0"
+									},
+									"scope": 49,
+									"src": "638:194:0",
+									"stateMutability": "view",
+									"virtual": false,
+									"visibility": "external"
+								}
+							],
+							"scope": 50,
+							"src": "57:777:0",
+							"usedErrors": []
+						}
+					],
+					"src": "32:803:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}
